@@ -4,6 +4,8 @@ import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
 import pic03 from '../images/pic03.jpg'
 import Iframe from 'react-iframe'
+import Slider from "react-slick";
+
 
 class Main extends React.Component {
   render() {
@@ -15,6 +17,14 @@ class Main extends React.Component {
         }}
       ></div>
     )
+
+    var settings = {
+     dots: true,
+     infinite: true,
+     speed: 500,
+     slidesToShow: 1,
+     slidesToScroll: 1
+   };
 
     return (
       <div
@@ -29,16 +39,35 @@ class Main extends React.Component {
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Intro</h2>
+          <h2 className="major">Music</h2>
 
-          <span className="image main">
-            <Iframe url="https://vimeo.com/396530446"
-                  className="video-wrapper"
-                  frameborder="0"
-                  gesture="media"
-                  allow="autoplay; fullscreen"
-            />
-          </span>
+
+          <Slider {...settings}>
+              <span className="image main">
+                <Iframe url="https://player.vimeo.com/video/396530446"
+                      className="video-wrapper"
+                      frameborder="0"
+                      gesture="media"
+                      allow="autoplay; fullscreen"
+                />
+              </span>
+              <div>
+                <h3>2</h3>
+              </div>
+              <div>
+                <h3>3</h3>
+              </div>
+              <div>
+                <h3>4</h3>
+              </div>
+              <div>
+                <h3>5</h3>
+              </div>
+              <div>
+                <h3>6</h3>
+              </div>
+          </Slider>
+
 
 
 
@@ -74,8 +103,8 @@ class Main extends React.Component {
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Work</h2>
-        
+          <h2 className="major">Film</h2>
+
           <span className="image main">
             <Iframe url="https://vimeo.com/396530446"
                   className="video-wrapper"
