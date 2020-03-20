@@ -6,6 +6,29 @@ import pic03 from '../images/pic03.jpg'
 import Iframe from 'react-iframe'
 import Slider from "react-slick";
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", margin: "2%" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", margin: "2%" }}
+      onClick={onClick}
+    />
+  );
+}
+
+
 
 class Main extends React.Component {
   render() {
@@ -19,11 +42,14 @@ class Main extends React.Component {
     )
 
     var settings = {
-     dots: true,
-     infinite: true,
+
      speed: 500,
      slidesToShow: 1,
-     slidesToScroll: 1
+     slidesToScroll: 1,
+     infinite: true,
+     nextArrow: <SampleNextArrow />,
+     prevArrow: <SamplePrevArrow />
+
    };
 
     return (
@@ -32,6 +58,7 @@ class Main extends React.Component {
         id="main"
         style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}
       >
+
         <article
           id="intro"
           className={`${this.props.article === 'intro' ? 'active' : ''} ${
@@ -39,59 +66,46 @@ class Main extends React.Component {
           }`}
           style={{ display: 'none' }}
         >
-          <h2 className="major">Music</h2>
+        <h2 className="major">Music</h2>
 
+        <div className="slickSlider">
 
-          <Slider {...settings}>
-              <span className="image main">
-                <Iframe url="https://player.vimeo.com/video/396530446"
-                      className="video-wrapper"
-                      frameborder="0"
-                      gesture="media"
-                      allow="autoplay; fullscreen"
-                />
-              </span>
-              <div>
-                <h3>2</h3>
-              </div>
-              <div>
-                <h3>3</h3>
-              </div>
-              <div>
-                <h3>4</h3>
-              </div>
-              <div>
-                <h3>5</h3>
-              </div>
-              <div>
-                <h3>6</h3>
-              </div>
+          <Slider {...settings} >
+                <div className="slickSliderItem">
+                  <Iframe url="https://player.vimeo.com/video/396530446"
+                        className="video-wrapper"
+                        frameborder="0"
+                        gesture="media"
+                        allow="autoplay; fullscreen"
+                  />
+                </div>
+
+                <div className="slickSliderItem">
+                  <Iframe url="https://player.vimeo.com/video/395263798"
+                        className="video-wrapper"
+                        frameborder="0"
+                        gesture="media"
+                        allow="autoplay; fullscreen"
+                  />
+                </div>
+
+                <div className="slickSliderItem">
+                  <Iframe url="https://player.vimeo.com/video/392322454"
+                        className="video-wrapper"
+                        frameborder="0"
+                        gesture="media"
+                        allow="autoplay; fullscreen"
+                  />
+                </div>
           </Slider>
 
-
+        </div>
 
 
           <p>
-            Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin
-            aliquam facilisis ante interdum congue. Integer mollis, nisl amet
-            convallis, porttitor magna ullamcorper, amet egestas mauris. Ut
-            magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
             By the way, check out my <a href="#work">awesome work</a>.
           </p>
 
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora
-            torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
-            libero eu nibh porttitor fermentum. Nullam venenatis erat id
-            vehicula viverra. Nunc ultrices eros ut ultricies condimentum.
-            Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae
-            dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in
-            lectus. Pellentesque habitant morbi tristique senectus et netus et
-            malesuada fames ac turpis egestas. In non lorem sit amet elit
-            placerat maximus. Pellentesque aliquam maximus risus, vel sed
-            vehicula.
-          </p>
 
           {close}
         </article>
@@ -105,14 +119,14 @@ class Main extends React.Component {
         >
           <h2 className="major">Film</h2>
 
-          <span className="image main">
-            <Iframe url="https://vimeo.com/396530446"
-                  className="video-wrapper"
-                  frameborder="0"
-                  gesture="media"
-                  allow="autoplay; fullscreen"
-            />
-          </span>
+          <div className="">
+              <Iframe url="https://player.vimeo.com/video/396530446"
+                    className="video-wrapper"
+                    frameborder="0"
+                    gesture="media"
+                    allow="autoplay; fullscreen"
+              />
+          </div>
 
           <p>
             Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu,

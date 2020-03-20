@@ -5,6 +5,14 @@
 ///
 
 /* Main */
+.video-wrapper{
+
+	 // border: 1px solid red;
+   width: auto;
+   margin: 0 auto; /* it centers any block level element */
+
+}
+
 
 	#main {
 		@include vendor('flex-grow', '1');
@@ -18,9 +26,8 @@
 		z-index: 3;
 		display: none;
 
-		span{
-			margin-left: 25%;
-		  border: 1px solid red;
+		.slickSlider{
+
 
 		}
 
@@ -97,7 +104,7 @@
 		@include breakpoint(small) {
 
 			span{
-				
+
 				margin: 0;
 				border: 1px solid red;
 
