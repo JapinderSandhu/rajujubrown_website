@@ -12,7 +12,11 @@
    margin: 0 auto; /* it centers any block level element */
 
 }
-
+.rajLogo{
+  // border: 1px solid red;
+  width: 35%;
+  height: 35%;
+}
 
 	#main {
 		@include vendor('flex-grow', '1');
